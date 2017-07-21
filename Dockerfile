@@ -6,7 +6,8 @@ RUN cp -R /usr/share/games/fortune/* /default-fortunes/
 RUN ln -s /fortunes /usr/share/games/fortune
 VOLUME /fortunes
 ENV COWSAY_DURATION "10"
-ENV COWSAY_ANIMAL "COW"
-COPY ./ENTRYPOINT.SH /ENTRYPOINT.SH
-RUN CHMOD +X /ENTRYPOINT.SH
-ENTRYPOINT ["/ENTRYPOINT.SH"]
+ENV COWSAY_ANIMAL "default"
+COPY ./entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
+
