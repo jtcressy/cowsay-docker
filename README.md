@@ -39,3 +39,10 @@ Example output:
                 ||----w |                                                                                                                                           
                 ||     ||                                                                                                                                           
 ```
+
+## Custom Fortunes
+
+The volume at ``/fortunes`` can be mounted to your host that includes any custom fortune files. 
+
+To learn how to create your own fortune files, click [here](http://louistiao.me/posts/creating-custom-unix-fortunes/)
+
