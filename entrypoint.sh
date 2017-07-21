@@ -1,8 +1,14 @@
 #! /bin/bash
-if [ $2 -eq '--fortune' ]
+if [ "$2" = "--fortune" ]
 then
     cowsay -f $COWSAY_ANIMAL $3
-else
-    cp -R /default-fortunes/* /fortunes/
+elif [ -z "$TERM" ]
+then
     watch -n $COWSAY_DURATION 'cowsay -f '$COWSAY_ANIMAL' $(fortune)'
+else
+    while true; do
+        cowsay -f $COWSAY_ANIMAL $(fortune)
+	sleep $COWSAY_DURATION
+    done
 fi
+
